@@ -19,7 +19,21 @@ class Product:
       return totalprice
   
   def make_purchase(self, quantity):
-      pass
+        if quantity < 0:
+            raise ValueError("Cannot purchase a negative quantity")
+        
+        if quantity > self.amount:
+            raise ValueError(f"Cannot purchase {quantity} items, only {self.amount} in stock.")
+        
+        # Get price with any applicable discount
+        total_price = self.get_price(quantity)
+        
+        # Reduce stock by the purchased amount
+        self.amount -= quantity
+        
+        # Display the total price charged
+        print(f"Purchased {quantity} {self.name}(s) for ${total_price:.2f}. Stock remaining: {self.amount}.")
+  
 
 
 laptop =Product('laptop',100,1000)
