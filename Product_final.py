@@ -1,4 +1,5 @@
-
+# Maintainer: Attia Inayat (SP23-BAI-012)
+# Collaborator: Noor Fatima (SP23-BAI-046)
 class Product:
   def __init__(self, name, amount, price):
       self.name = name
