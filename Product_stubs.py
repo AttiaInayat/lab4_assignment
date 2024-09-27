@@ -1,5 +1,3 @@
-import app
-
 def get_price(self, quantity):
       if quantity<0:
           raise ValueError('Quantity is not valid')
